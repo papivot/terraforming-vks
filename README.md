@@ -6,8 +6,8 @@ This Terraform configuration deploys a VMware Kubernetes Service (VKS) cluster b
 
 Before applying this Terraform configuration, ensure the following:
 
-1.  **`kubectl` Configuration:** Your `kubectl` command-line tool must be configured to point to the Kubernetes management cluster where the VKS cluster (Workload Cluster) will be deployed.
-2.  **`ClassyCluster` CRDs:** The necessary Custom Resource Definitions (CRDs) for `ClassyCluster` must be present in the management cluster.
+1.  **`kubectl` Configuration:** Your `kubectl` command-line tool must be configured to point to the Supervisor's vSphere Namespace where the VKS cluster (Workload Cluster) will be deployed.
+2.  **`cluster_class` Configuration:** The necessary version of the cluster_class is is present in the Supervisor.
 
 ## Variables
 
@@ -22,7 +22,7 @@ The following variables are defined in `variables.tf` and can be customized:
 | `control_plane_replicas`  | `1`                                 | The number of control plane replicas for the VKS cluster.                   |
 | `ntp.server`              | `ntp.broadcom.com`                  | The NTP server to be configured for the cluster nodes.                        |
 | `base_vm_class`           | `best-effort-medium`                | The VM class for the cluster nodes.                                         |
-| `base_storage_class`      | `tanzu`                             | The storage class to be used for the cluster's base persistent volumes.       |
+| `base_storage_class`      | `tanzu`                             | The storage class for the cluster's base persistent volumes.       |
 | `default_storage_class`   | `tanzu`                             | The default storage class for persistent volume claims within the VKS cluster. |
 
 ## Usage
