@@ -18,7 +18,7 @@ variable "control_plane_replicas" {
 	default = 1
 }
 
-variable "ntp.server" {
+variable "ntp_server" {
 	default = "ntp.broadcom.com"
 }
 
