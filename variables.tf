@@ -17,3 +17,19 @@ variable "cluster_class" {
 variable "control_plane_replicas" {
 	default = 1
 }
+
+variable "ntp.server" {
+	default = "ntp.broadcom.com"
+}
+
+variable "base_vm_class" {
+	default = "best-effort-medium"
+}
+
+variable "base_storage_class" {
+	default = "tanzu"
+}
+
+variable "default_storage_class" {
+	default = "tanzu"
+}

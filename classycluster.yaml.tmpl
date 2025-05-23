@@ -51,13 +51,13 @@ spec:
         replicas: 0
     variables:
       - name: ntp
-        value: ntp.broadcom.com
+        value: ${ntp_server}
       - name: vmClass
-        value: best-effort-medium
+        value: ${base_vm_class}
       - name: storageClass
-        value: tanzu
+        value: ${base_storage_class}
       - name: defaultStorageClass
-        value: tanzu
+        value: ${default_storage_class}
       - name: clusterEncryptionConfigYaml
         value: |
           apiVersion: apiserver.config.k8s.io/v1
@@ -77,12 +77,12 @@ spec:
             storage: "15Gi"
           mountPath: "/var/lib/containerd"
           name: containerd
-          storageClass: tanzu
+          storageClass: ${base_storage_class}
         - capacity:
             storage: "15Gi"
           mountPath: "/var/lib/kubelet"
           name: kubelet
-          storageClass: tanzu
+          storageClass: ${base_storage_class}
       - name: podSecurityStandard
         value:
           audit: restricted
